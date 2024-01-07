@@ -4,7 +4,7 @@ using System.Text;
 string codeVerifier = GenerateVerifier();
 
 Console.WriteLine($"Generated Code Verifier: {codeVerifier}");
-Console.WriteLine("BASE64URL-ENCODE(SHA256(ASCII(code_verifier))): " + Convert.ToBase64String(SHA256.HashData(Encoding.ASCII.GetBytes(codeVerifier)))
+Console.WriteLine("generated code challenge: " + Convert.ToBase64String(SHA256.HashData(Encoding.ASCII.GetBytes(codeVerifier)))
     .TrimEnd('=')
     .Replace('+', '-')
     .Replace('/', '_'));
